@@ -16,5 +16,9 @@ public class GeneratorTrigger : MonoBehaviour
             // Instantiate the object at the specified position
             Instantiate(objectToInstantiate, spawnPosition.position, Quaternion.identity);
         }
+        if (other.CompareTag("Die"))
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
     }
 }
