@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GeneratorTrigger : MonoBehaviour
 {
@@ -16,9 +17,13 @@ public class GeneratorTrigger : MonoBehaviour
             // Instantiate the object at the specified position
             Instantiate(objectToInstantiate, spawnPosition.position, Quaternion.identity);
         }
-        if (other.CompareTag("Die"))
+        else if (other.CompareTag("Die"))
         {
-            UnityEditor.EditorApplication.isPlaying = false;
+            Invoke("RestartScene", 0.5f);
         }
+    }
+    void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
