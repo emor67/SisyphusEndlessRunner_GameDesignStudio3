@@ -5,16 +5,15 @@ using TMPro;
 
 public class Score_UI : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;  // Unity Editöründe metin nesnesini sürükleyip býrakacaðýnýz public bir Text deðiþkeni.
+    public TextMeshProUGUI scoreText; 
 
-    private int score = -6;
-    private float increaseRate = 300.0f;
+    private int score = -2;
+    private float increaseRate = 100.0f;
 
 
     void Update()
     {
         score += Mathf.RoundToInt(increaseRate * Time.deltaTime);
         scoreText.text = score.ToString();
-        Debug.Log("Skor: " + score);
     }
 }
