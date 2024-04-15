@@ -83,10 +83,11 @@ Material:
     - _BUILTIN_QueueOffset: 0
     - _BumpScale: 1
     - _CurveX: 0
-    - _CurveY: 0
+    - _CurveY: 0.15
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _ENABLE_BENDING: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
