@@ -154,7 +154,7 @@ Transform:
   m_GameObject: {fileID: 269043393}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 40}
+  m_LocalPosition: {x: 0, y: 0, z: 35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -653,13 +653,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835063392}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2376859, y: 0, z: 0, w: 0.97134215}
-  m_LocalPosition: {x: 0, y: 4.08, z: -4.24}
+  m_LocalRotation: {x: 0.21473525, y: 0, z: 0, w: 0.9766723}
+  m_LocalPosition: {x: 0, y: 7, z: -5.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 27.5, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 24.8, y: 0, z: 0}
 --- !u!114 &1835063396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,45 +860,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 531923208392060782, guid: 039a3117216c4a64b906f0e2a3bf10b5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1440549763149517233, guid: 039a3117216c4a64b906f0e2a3bf10b5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3669353444241505720, guid: 039a3117216c4a64b906f0e2a3bf10b5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3937978384172595153, guid: 039a3117216c4a64b906f0e2a3bf10b5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5153268063957594251, guid: 039a3117216c4a64b906f0e2a3bf10b5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5452292134956807528, guid: 039a3117216c4a64b906f0e2a3bf10b5,
         type: 3}
       propertyPath: m_Name
       value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 6640356227429638739, guid: 039a3117216c4a64b906f0e2a3bf10b5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8257260589570857636, guid: 039a3117216c4a64b906f0e2a3bf10b5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8443709387502882886, guid: 039a3117216c4a64b906f0e2a3bf10b5,
         type: 3}

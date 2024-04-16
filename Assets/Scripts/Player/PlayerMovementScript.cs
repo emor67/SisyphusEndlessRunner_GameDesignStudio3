@@ -13,7 +13,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
 
-        float movement = horizontalInput * moveSpeed * Time.deltaTime;
+        float movement = horizontalInput * moveSpeed * Time.deltaTime*2;
 
         transform.Translate(Vector3.right * movement);
 
