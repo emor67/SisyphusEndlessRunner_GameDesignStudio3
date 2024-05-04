@@ -11,17 +11,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4c180db8aec23924dae6659e68bbd717,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -6.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c180db8aec23924dae6659e68bbd717,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.49
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c180db8aec23924dae6659e68bbd717,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 7.71
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c180db8aec23924dae6659e68bbd717,
         type: 3}
@@ -64,7 +64,9 @@ PrefabInstance:
       value: sisifus_game_column1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -8700617353114198275, guid: 4c180db8aec23924dae6659e68bbd717, type: 3}
+    - {fileID: 65702495048144492, guid: 4c180db8aec23924dae6659e68bbd717, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c180db8aec23924dae6659e68bbd717, type: 3}
