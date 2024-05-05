@@ -63,8 +63,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: sisifus_game_ancient_coin_bronze
       objectReference: {fileID: 0}
+    - target: {fileID: 7202271454713460447, guid: cea9e5c8fe961d0418a1954d3392e6f7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a91c8ef538edb8c45a24ef394baf70b3, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -8700617353114198275, guid: cea9e5c8fe961d0418a1954d3392e6f7, type: 3}
+    - {fileID: 65702495048144492, guid: cea9e5c8fe961d0418a1954d3392e6f7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cea9e5c8fe961d0418a1954d3392e6f7, type: 3}
