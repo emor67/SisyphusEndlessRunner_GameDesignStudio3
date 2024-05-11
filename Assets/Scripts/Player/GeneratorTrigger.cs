@@ -4,9 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class GeneratorTrigger : MonoBehaviour
 {
-    public GameObject objectToInstantiate; // Drag the prefab you want to instantiate into this field in the Inspector
+   // public GameObject objectToInstantiate; // Drag the prefab you want to instantiate into this field in the Inspector
     public Transform generationPosition; // Specify the position where you want to instantiate the object
     public float destroyDelay = 5f;
+    public GameObject[] objectsToSpawn;
 
     // This method is called when a Collider enters the trigger
     void OnTriggerEnter(Collider other)
@@ -15,16 +16,28 @@ public class GeneratorTrigger : MonoBehaviour
         if (other.CompareTag("GenTrigger"))
         {
             // Instantiate the object at the specified position
-            GameObject instantiatedObject = Instantiate(objectToInstantiate, generationPosition.position, Quaternion.identity);
+            //GameObject instantiatedObject = Instantiate(objectToInstantiate, generationPosition.position, Quaternion.identity);
             DestroyRandomObjects(objectsToDestroy, 4);
+            SpawnRandomObject();
 
             // Destroy the instantiated object after the specified delay
-            DestroyAfterDelay(instantiatedObject, destroyDelay);
+            //DestroyAfterDelay(instantiatedObject, destroyDelay);
         }
+
         else if (other.CompareTag("Die"))
         {
             Invoke("RestartScene", 0.5f);
         }
+    }
+
+    void SpawnRandomObject()
+    {
+        // Rastgele bir indeks seç
+        int randomIndex = Random.Range(0, objectsToSpawn.Length);
+
+        // Seçilen indeksteki objeyi spawn et
+        GameObject spawnedObject = Instantiate(objectsToSpawn[randomIndex], generationPosition.position, Quaternion.identity);
+        DestroyAfterDelay(spawnedObject, destroyDelay);
     }
 
     void RestartScene()

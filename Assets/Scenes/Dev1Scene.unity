@@ -303,9 +303,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1f9fbedc5211640b8f7a0e16ac347e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToInstantiate: {fileID: 417638504}
   generationPosition: {fileID: 269043394}
-  destroyDelay: 5
+  destroyDelay: 8
+  objectsToSpawn:
+  - {fileID: 5452292134956807528, guid: 8a9b7d171e270434fa68be8db772e3be, type: 3}
+  - {fileID: 5452292134956807528, guid: c3f79ac45bf5a4241baed7f257538b44, type: 3}
+  - {fileID: 5452292134956807528, guid: 470d039c8e083994798857c372c91c68, type: 3}
+  - {fileID: 5452292134956807528, guid: e84f69d6388d84e4d910965241b96550, type: 3}
+  - {fileID: 5452292134956807528, guid: 94f4ccba167e2a949be200e3124ba5ff, type: 3}
   objectsToDestroy: []
 --- !u!114 &340932018
 MonoBehaviour:
@@ -349,12 +354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinText: {fileID: 1833705753}
---- !u!1 &417638504 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5452292134956807528, guid: 8a9b7d171e270434fa68be8db772e3be,
-    type: 3}
-  m_PrefabInstance: {fileID: 526970929}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &526970929
 PrefabInstance:
   m_ObjectHideFlags: 0
