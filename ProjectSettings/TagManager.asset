@@ -8,6 +8,7 @@ TagManager:
   - Destroyer
   - Die
   - Coin
+  - HealthPotion
   layers:
   - Default
   - TransparentFX

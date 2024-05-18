@@ -9,6 +9,7 @@ public class PlayerMovementScript : MonoBehaviour
     public Transform rightHandTransform;
     public Transform leftHandTransform;
 
+
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -23,3 +24,7 @@ public class PlayerMovementScript : MonoBehaviour
         leftHandTransform.position = new Vector3(stoneTransform.position.x - 0.7f, leftHandTransform.position.y, leftHandTransform.position.z);
     }
 }
+
+
+
+

@@ -8,27 +8,81 @@ public class GeneratorTrigger : MonoBehaviour
     public Transform generationPosition; // Specify the position where you want to instantiate the object
     public float destroyDelay = 5f;
     public GameObject[] objectsToSpawn;
+    public int health = 1;
+    public GameObject shield;
+    private bool isShieldActive = false;
+
+
+    void Start()
+    {
+        if (shield != null)
+        {
+            shield.SetActive(false); // Baþlangýçta kalkaný gizle
+            Debug.Log("Shield set to inactive at start.");
+        }
+    }
 
     // This method is called when a Collider enters the trigger
     void OnTriggerEnter(Collider other)
     {
-        // Check if the entering collider has the tag "trigger"
+
         if (other.CompareTag("GenTrigger"))
         {
-            // Instantiate the object at the specified position
-            //GameObject instantiatedObject = Instantiate(objectToInstantiate, generationPosition.position, Quaternion.identity);
-            DestroyRandomObjects(objectsToDestroy, 4);
+            Debug.Log("Level Spawnnnnnnnnnn");
             SpawnRandomObject();
-
-            // Destroy the instantiated object after the specified delay
-            //DestroyAfterDelay(instantiatedObject, destroyDelay);
         }
-
         else if (other.CompareTag("Die"))
+        {
+            HandleCollisionWithDie();
+        }
+        else if (other.CompareTag("HealthPotion"))
+        {
+            //AddHealth(1); // Pot toplandýðýnda 1 can ekle
+            ActivateShield();
+            Destroy(other.gameObject); // Potu yok et
+        }
+    }
+
+    void HandleCollisionWithDie()
+    {
+        if (isShieldActive)
+        {
+            Debug.Log("Shield absorbed the hit.");
+            // Kalkan aktifse çarpýþmayý absorbe eder, oyuncu zarar görmez
+        }
+        else
         {
             Invoke("RestartScene", 0.5f);
         }
     }
+    /*public void AddHealth(int amount)
+    {
+        health += amount;
+        Debug.Log("Health added. Current health: " + health);
+    }*/
+
+    public void ActivateShield()
+    {
+        if (shield != null)
+        {
+            Debug.Log("Shield activate.");
+            shield.SetActive(true); // Kalkaný görünür yap
+            isShieldActive = true;
+            // Kalkanýn süresini ayarlamak isterseniz
+            Invoke("DeactivateShield", 5f); // 5 saniye sonra kalkaný devre dýþý býrak
+        }
+    }
+
+    private void DeactivateShield()
+    {
+        if (shield != null)
+        {
+            Debug.Log("Shield DEactivate.");
+            shield.SetActive(false); // Kalkaný gizle
+            isShieldActive = false;
+        }
+    }
+
 
     void SpawnRandomObject()
     {
@@ -58,43 +112,9 @@ public class GeneratorTrigger : MonoBehaviour
         // Destroy the object after the specified delay
         Destroy(obj, delay);
     }
-    ////////////
-   public GameObject[] objectsToDestroy; // Array to hold references to the objects to destroy
 
-    void Start()
-    {
-        // Randomly select and destroy 4 objects
-        
-    }
+    public GameObject[] objectsToDestroy; // Array to hold references to the objects to destroy
 
-    void DestroyRandomObjects(GameObject[] objects, int count)
-    {
-        // Make sure there are enough objects to destroy
-        if (objects.Length < count)
-        {
-            Debug.LogWarning("Trying to destroy more objects than available.");
-            return;
-        }
 
-        // Shuffle the array of objects
-        Shuffle(objects);
 
-        // Destroy the specified number of objects
-        for (int i = 0; i < count; i++)
-        {
-            Destroy(objects[i]);
-        }
-    }
-
-    // Fisher-Yates shuffle algorithm to shuffle the array
-    void Shuffle(GameObject[] array)
-    {
-        for (int i = array.Length - 1; i > 0; i--)
-        {
-            int randomIndex = Random.Range(0, i + 1);
-            GameObject temp = array[i];
-            array[i] = array[randomIndex];
-            array[randomIndex] = temp;
-        }
-    }
 }
