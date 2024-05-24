@@ -6,20 +6,41 @@ public class GeneratorTrigger : MonoBehaviour
 {
    // public GameObject objectToInstantiate; // Drag the prefab you want to instantiate into this field in the Inspector
     public Transform generationPosition; // Specify the position where you want to instantiate the object
-    public float destroyDelay = 5f;
+    public float destroyDelay = 6f;
     public GameObject[] objectsToSpawn;
-    public int health = 1;
+    public GameObject[] objectsToDestroy; // Array to hold references to the objects to destroy
+    //public int health = 1;
     public GameObject shield;
+    private float shieldDuration = 0f;
     private bool isShieldActive = false;
+    //shield scale
+    public float animationSpeed = 0.5f; // Speed of the scaling animation
+
+    private Vector3 initialScale; // Initial scale of the object
+    private float targetScale; // Target scale for the animation
 
 
     void Start()
     {
         if (shield != null)
         {
-            shield.SetActive(false); // Baþlangýçta kalkaný gizle
+            shield.SetActive(false); // Baï¿½langï¿½ï¿½ta kalkanï¿½ gizle
             Debug.Log("Shield set to inactive at start.");
         }
+
+        // Store the initial scale of the target GameObject
+        initialScale = shield.transform.localScale;
+        // Calculate the target scale for the animation
+        targetScale = initialScale.magnitude + initialScale.magnitude * 0.1f;
+    }
+
+    void Update()
+    {
+        // Calculate the scaling factor using sine function
+        float scaleFactor = Mathf.PingPong(Time.time * animationSpeed, targetScale - initialScale.magnitude);
+        
+        // Apply scaling to the target GameObject
+        shield.transform.localScale = initialScale + Vector3.one * scaleFactor;
     }
 
     // This method is called when a Collider enters the trigger
@@ -37,7 +58,7 @@ public class GeneratorTrigger : MonoBehaviour
         }
         else if (other.CompareTag("HealthPotion"))
         {
-            //AddHealth(1); // Pot toplandýðýnda 1 can ekle
+            //AddHealth(1); // Pot toplandï¿½ï¿½ï¿½nda 1 can ekle
             ActivateShield();
             Destroy(other.gameObject); // Potu yok et
         }
@@ -48,11 +69,11 @@ public class GeneratorTrigger : MonoBehaviour
         if (isShieldActive)
         {
             Debug.Log("Shield absorbed the hit.");
-            // Kalkan aktifse çarpýþmayý absorbe eder, oyuncu zarar görmez
+            // Kalkan aktifse ï¿½arpï¿½ï¿½mayï¿½ absorbe eder, oyuncu zarar gï¿½rmez
         }
         else
         {
-            Invoke("RestartScene", 0.5f);
+            SceneManager.LoadScene("MainMenu");
         }
     }
     /*public void AddHealth(int amount)
@@ -66,10 +87,12 @@ public class GeneratorTrigger : MonoBehaviour
         if (shield != null)
         {
             Debug.Log("Shield activate.");
-            shield.SetActive(true); // Kalkaný görünür yap
+            shield.SetActive(true); // Kalkanï¿½ gï¿½rï¿½nï¿½r yap
             isShieldActive = true;
-            // Kalkanýn süresini ayarlamak isterseniz
-            Invoke("DeactivateShield", 5f); // 5 saniye sonra kalkaný devre dýþý býrak
+            // Kalkanï¿½n sï¿½resini ayarlamak isterseniz
+            shieldDuration += 5f;
+            Invoke("DeactivateShield", shieldDuration); // 5 saniye sonra kalkanï¿½ devre dï¿½ï¿½ï¿½ bï¿½rak
+            shieldDuration = 0;
         }
     }
 
@@ -78,7 +101,7 @@ public class GeneratorTrigger : MonoBehaviour
         if (shield != null)
         {
             Debug.Log("Shield DEactivate.");
-            shield.SetActive(false); // Kalkaný gizle
+            shield.SetActive(false); // Kalkanï¿½ gizle
             isShieldActive = false;
         }
     }
@@ -86,10 +109,10 @@ public class GeneratorTrigger : MonoBehaviour
 
     void SpawnRandomObject()
     {
-        // Rastgele bir indeks seç
+        // Rastgele bir indeks seï¿½
         int randomIndex = Random.Range(0, objectsToSpawn.Length);
 
-        // Seçilen indeksteki objeyi spawn et
+        // Seï¿½ilen indeksteki objeyi spawn et
         GameObject spawnedObject = Instantiate(objectsToSpawn[randomIndex], generationPosition.position, Quaternion.identity);
         DestroyAfterDelay(spawnedObject, destroyDelay);
     }
@@ -113,7 +136,7 @@ public class GeneratorTrigger : MonoBehaviour
         Destroy(obj, delay);
     }
 
-    public GameObject[] objectsToDestroy; // Array to hold references to the objects to destroy
+    
 
 
 
