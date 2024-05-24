@@ -18,7 +18,7 @@ public class PlayerMovementScript : MonoBehaviour
 
         transform.Translate(Vector3.right * movement);
 
-        transform.Rotate(new Vector3(90, 0, 0) * Time.deltaTime);
+        transform.Rotate(new Vector3(90, 0, 0) * Time.deltaTime*3.2f);
         
         rightHandTransform.position = new Vector3(stoneTransform.position.x + 0.7f, rightHandTransform.position.y, rightHandTransform.position.z);
         leftHandTransform.position = new Vector3(stoneTransform.position.x - 0.7f, leftHandTransform.position.y, leftHandTransform.position.z);
