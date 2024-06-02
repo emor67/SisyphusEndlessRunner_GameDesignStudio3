@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 340932013}
   - component: {fileID: 340932012}
   - component: {fileID: 340932011}
-  - component: {fileID: 340932018}
+  - component: {fileID: 340932022}
   - component: {fileID: 340932017}
   - component: {fileID: 340932019}
   - component: {fileID: 340932020}
@@ -401,22 +401,6 @@ MonoBehaviour:
   objectsToDestroy: []
   shield: {fileID: 26797715}
   animationSpeed: 2
---- !u!114 &340932018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340932010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80428c7e76a4d734cb9237cc99aba8fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 7
-  stoneTransform: {fileID: 340932015}
-  rightHandTransform: {fileID: 705561774748112436}
-  leftHandTransform: {fileID: 705561775787193540}
 --- !u!114 &340932019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,6 +442,22 @@ MonoBehaviour:
   speedIncreaseAmount: 0.1
   timeBetweenSpeedIncreases: 15
   targetSceneName: Dev1Scene
+--- !u!114 &340932022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340932010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80428c7e76a4d734cb9237cc99aba8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 7
+  stoneTransform: {fileID: 340932015}
+  rightHandTransform: {fileID: 705561774748112436}
+  leftHandTransform: {fileID: 705561775787193540}
 --- !u!1001 &526970929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -874,6 +874,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1781732866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1781732867}
+  - component: {fileID: 1781732868}
+  m_Layer: 0
+  m_Name: CoinManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1781732867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781732866}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.876377, y: 226.5737, z: -0.3230896}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1781732868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781732866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f2567127174c34ebeb39e2d77e9d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1801130882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1739,3 +1783,4 @@ SceneRoots:
   - {fileID: 722085313}
   - {fileID: 937941383}
   - {fileID: 2016084541}
+  - {fileID: 1781732867}
