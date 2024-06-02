@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -65,4 +65,4 @@ public class ScoreManager : MonoBehaviour
         lastScore = PlayerPrefs.GetInt("LastScore", 0);
         highestScore = PlayerPrefs.GetInt("HighestScore", 0);
     }
-}
+}*/

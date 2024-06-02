@@ -18,6 +18,7 @@ public class GeneratorTrigger : MonoBehaviour
 
     private Vector3 initialScale; // Initial scale of the object
     private float targetScale; // Target scale for the animation
+    public Score_UI scoreUI;
 
 
     void Start()
@@ -74,6 +75,7 @@ public class GeneratorTrigger : MonoBehaviour
         else
         {
             SceneManager.LoadScene("MainMenu");
+            scoreUI.ResetScore();
         }
     }
     /*public void AddHealth(int amount)

@@ -8,7 +8,7 @@ public class DisplayScores : MonoBehaviour
 
     private void Start()
     {
-        lastScoreText.text = "Last Score: " + ScoreManager.Instance.GetLastScore().ToString();
-        highestScoreText.text = "Highest Score: " + ScoreManager.Instance.GetHighestScore().ToString();
+        lastScoreText.text = "Last Score: " + PlayerPrefs.GetInt("lastscore").ToString();
+        highestScoreText.text = "Highest Score: " + PlayerPrefs.GetInt("highscore").ToString();
     }
 }

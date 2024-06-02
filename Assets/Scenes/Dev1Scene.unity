@@ -401,6 +401,7 @@ MonoBehaviour:
   objectsToDestroy: []
   shield: {fileID: 26797715}
   animationSpeed: 2
+  scoreUI: {fileID: 340932019}
 --- !u!114 &340932019
 MonoBehaviour:
   m_ObjectHideFlags: 0
