@@ -21,6 +21,6 @@ public class Score_UI : MonoBehaviour
     public void ResetScore()
     {
         PlayerPrefs.SetInt("lastscore", score);
-        score = -14;
+        score = -10;
     }
 }
