@@ -5,7 +5,7 @@ public class Score_UI : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public static int score;
-    private float increaseRate = 100.0f;
+    private float increaseRate = 100f;
 
     void Update()
     {
@@ -21,6 +21,6 @@ public class Score_UI : MonoBehaviour
     public void ResetScore()
     {
         PlayerPrefs.SetInt("lastscore", score);
-        score = -10;
+        score = 0;
     }
 }
