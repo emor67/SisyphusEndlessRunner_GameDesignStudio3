@@ -18,7 +18,7 @@ public class Coin_UI : MonoBehaviour
             CoinManager.Instance.AddCoins(1);
             UpdateCoinText();
         }
-    }
+    } 
 
     private void UpdateCoinText()
     {
