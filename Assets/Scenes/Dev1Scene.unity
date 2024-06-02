@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedIncreaseAmount: 0.1
-  timeBetweenSpeedIncreases: 15
+  timeBetweenSpeedIncreases: 10
   targetSceneName: Dev1Scene
 --- !u!114 &340932022
 MonoBehaviour:
