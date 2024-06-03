@@ -87,8 +87,8 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _T_lingnOrmal: 0
-    - _Tiling: 1
+    - _T_lingnOrmal: 2
+    - _Tiling: 2
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
