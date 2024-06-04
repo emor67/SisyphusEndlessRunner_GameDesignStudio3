@@ -9,6 +9,7 @@ TagManager:
   - Die
   - Coin
   - HealthPotion
+  - CoinGold
   layers:
   - Default
   - TransparentFX

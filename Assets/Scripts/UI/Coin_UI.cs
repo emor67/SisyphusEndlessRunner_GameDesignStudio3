@@ -18,6 +18,12 @@ public class Coin_UI : MonoBehaviour
             CoinManager.Instance.AddCoins(1);
             UpdateCoinText();
         }
+        if (collision.gameObject.CompareTag("CoinGold"))
+        {
+            Destroy(collision.gameObject);
+            CoinManager.Instance.AddCoins(3);
+            UpdateCoinText();
+        }
     } 
 
     private void UpdateCoinText()
