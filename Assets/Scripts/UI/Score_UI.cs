@@ -7,6 +7,8 @@ public class Score_UI : MonoBehaviour
     public static int score;
     private float increaseRate = 100f;
 
+  
+
     void Update()
     {
         score += Mathf.RoundToInt(increaseRate * Time.deltaTime);

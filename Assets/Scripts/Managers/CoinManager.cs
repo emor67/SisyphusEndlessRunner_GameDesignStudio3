@@ -31,6 +31,11 @@ public class CoinManager : MonoBehaviour
         SaveCoins();
     }
 
+    public void CoinZero()
+    {
+        coins = 0;
+    }
+
     private void SaveCoins()
     {
         PlayerPrefs.SetInt("Coins", coins);

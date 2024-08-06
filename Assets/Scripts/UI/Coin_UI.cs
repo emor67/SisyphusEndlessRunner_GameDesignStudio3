@@ -7,6 +7,7 @@ public class Coin_UI : MonoBehaviour
 
     private void Start()
     {
+        //CoinManager.Instance.CoinZero();
         UpdateCoinText();
     }
 
@@ -29,5 +30,4 @@ public class Coin_UI : MonoBehaviour
     private void UpdateCoinText()
     {
         coinText.text = CoinManager.Instance.GetCoins().ToString();
-    }
-}
+    }}

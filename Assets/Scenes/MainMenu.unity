@@ -1185,7 +1185,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Highest score: '
+  m_text: 'High score: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f09ada7fcd0107458232eb157b11dc0, type: 2}
   m_sharedMaterial: {fileID: -5265030645942373444, guid: 9f09ada7fcd0107458232eb157b11dc0,
